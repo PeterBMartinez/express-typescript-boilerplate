@@ -37,7 +37,8 @@ describe('UserValidations', () => {
         user.lastName = 'TestName';
         user.email = 'test@test.com';
         user.username = 'test';
-        user.password = '1234';
+        user.password = 'Boomerdog225';
+        user.role = 'admin';
         const errors = await validate(user);
         expect(errors.length).toEqual(0);
         done();

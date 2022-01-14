@@ -2,9 +2,9 @@ import { Connection } from 'typeorm';
 import { Factory, Seed } from 'typeorm-seeding';
 import * as uuid from 'uuid';
 
-import { User } from '../../../src/api/models/User';
+import { User } from '../../api/models/User';
 
-export class CreateBruce implements Seed {
+export class CreatePeter implements Seed {
 
     public async seed(factory: Factory, connection: Connection): Promise<User> {
         // const userFactory = factory<User, { role: string }>(User as any);
@@ -31,11 +31,12 @@ export class CreateBruce implements Seed {
 
         const user = new User();
         user.id = uuid.v1();
-        user.firstName = 'Bruce';
-        user.lastName = 'Wayne';
-        user.email = 'bruce.wayne@wayne-enterprises.com';
-        user.username = 'bruce';
+        user.firstName = 'Peter';
+        user.lastName = 'Martinez';
+        user.email = 'petermartinez225@gmail.com';
+        user.username = 'Crowmeleon';
         user.password = '1234';
+        user.role = 'admin';
         return await em.save(user);
     }
 

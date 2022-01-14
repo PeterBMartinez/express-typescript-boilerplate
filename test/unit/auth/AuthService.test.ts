@@ -19,15 +19,15 @@ describe('AuthService', () => {
 
     describe('parseTokenFromRequest', () => {
         test('Should return the credentials of the basic authorization header', () => {
-            const base64 = Buffer.from(`bruce:1234`).toString('base64');
+            const base64 = Buffer.from(`petermartinez225@gmail.com:Boomerdog225`).toString('base64');
             const req: Request = new MockExpressRequest({
                 headers: {
                     Authorization: `Basic ${base64}`,
                 },
             });
             const credentials = authService.parseBasicAuthFromRequest(req);
-            expect(credentials.username).toBe('bruce');
-            expect(credentials.password).toBe('1234');
+            expect(credentials.email).toBe('petermartinez225@gmail.com');
+            expect(credentials.password).toBe('Boomerdog225');
         });
 
         test('Should return undefined if there is no basic authorization header', () => {

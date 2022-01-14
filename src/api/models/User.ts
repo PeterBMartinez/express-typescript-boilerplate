@@ -51,6 +51,10 @@ export class User {
     @Column()
     public username: string;
 
+    @IsNotEmpty()
+    @Column()
+    public role: string;
+
     @OneToMany(type => Pet, pet => pet.user)
     public pets: Pet[];
 
